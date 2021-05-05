@@ -39,7 +39,7 @@ describe('Component TripSummary', () => {
 
   it('should render tags in spans in correct order', () => {
     const expectedTags = ['tag1', 'tag1', 'tag3'];
-    const component = shallow(<TripSummary tags={expectedTags} />);
+    const component = shallow(<TripSummary tags={expectedTags} id='abc' />);
 
     expect(component.find('.tags span').at(0).text()).toEqual(expectedTags[0]);
     expect(component.find('.tags span').at(1).text()).toEqual(expectedTags[1]);
@@ -47,9 +47,9 @@ describe('Component TripSummary', () => {
   });
 
   it('should not render div .tags without props tags or tags=[]', () => {
-    const component = shallow(<TripSummary />);
+    const component = shallow(<TripSummary id='abc' />);
     expect(component.find('.tags')).toMatchObject({});
-    const component2 = shallow(<TripSummary tags={[]} />);
+    const component2 = shallow(<TripSummary tags={[]} id='abc' />);
     expect(component2.find('.tags')).toMatchObject({});
   });
 });
