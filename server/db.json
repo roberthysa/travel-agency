@@ -1,0 +1,18 @@
+{
+  "orders": [
+    {
+      "car-rental": "suv",
+      "accommodation": "suite",
+      "features": [
+        "all-inclusive"
+      ],
+      "adults": "2",
+      "children": "1",
+      "name": "My name",
+      "contact": "+48123456789",
+      "start-date": "2021-05-27T18:17:10.000Z",
+      "totalCost": "$130,702",
+      "id": 1
+    }
+  ]
+}
