@@ -13,6 +13,76 @@
       "start-date": "2021-05-27T18:17:10.000Z",
       "totalCost": "$130,702",
       "id": 1
+    },
+    {
+      "car-rental": "suv",
+      "accommodation": "house",
+      "features": [
+        "security"
+      ],
+      "adults": "3",
+      "children": 0,
+      "name": "John Smith",
+      "contact": "466457667",
+      "start-date": "2021-05-20T18:49:04.000Z",
+      "totalCost": "$163,742",
+      "tripId": "5cc1d10130dfa407e2e54e20",
+      "tripName": "Pleasant travel in cool Turkey",
+      "countryCode": "TUR",
+      "id": 2
+    },
+    {
+      "car-rental": "",
+      "accommodation": "hotel",
+      "features": [
+        "kitchen",
+        "pool"
+      ],
+      "adults": "2",
+      "children": 0,
+      "name": "Micky Mouse",
+      "contact": "923123456",
+      "start-date": "2021-06-05T18:56:21.000Z",
+      "totalCost": "$105,762",
+      "tripId": "5cc1d10130dfa407e2e54e20",
+      "tripName": "Pleasant travel in cool Turkey",
+      "countryCode": "TUR",
+      "id": 3
+    },
+    {
+      "car-rental": "full",
+      "accommodation": "house",
+      "features": [
+        "pool",
+        "kitchen"
+      ],
+      "adults": "2",
+      "children": "1",
+      "name": "Jan Kowalski",
+      "contact": "482134876",
+      "start-date": "2021-05-27T15:20:32.000Z",
+      "totalCost": "$79,798",
+      "tripId": "5cc1d10181a30e85c8d9ad4a",
+      "tripName": "Pleasant trek in outstanding Togo",
+      "countryCode": "TGO",
+      "id": 4
+    },
+    {
+      "car-rental": "full",
+      "accommodation": "hotel",
+      "features": [
+        "all-inclusive"
+      ],
+      "adults": "3",
+      "children": "0",
+      "name": "Paweł Nowak",
+      "contact": "435777892",
+      "start-date": "2021-05-09T15:21:10.000Z",
+      "totalCost": "$73,405",
+      "tripId": "5cc1d1013091dba04d042a96",
+      "tripName": "Excellent swing in pleasant Vanuatu",
+      "countryCode": "VUT",
+      "id": 5
     }
   ]
 }

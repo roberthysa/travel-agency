@@ -9,12 +9,15 @@ import {formatPrice} from '../../../utils/formatPrice';
 import {calculateTotal} from '../../../utils/calculateTotal';
 import settings from '../../../data/settings';
 
-const sendOrder = (options, tripCost) => {
+const sendOrder = (options, tripCost, tripId, tripName, countryCode) => {
   const totalCost = formatPrice(calculateTotal(tripCost, options));
 
   const payload = {
     ...options,
     totalCost,
+    tripId,
+    tripName,
+    countryCode,
   };
 
   const url = settings.db.url + '/' + settings.db.endpoint.orders;
@@ -28,15 +31,20 @@ const sendOrder = (options, tripCost) => {
     body: JSON.stringify(payload),
   };
 
-  fetch(url, fetchOptions)
-    .then(function(response){
-      return response.json();
-    }).then(function(parsedResponse){
-      console.log('parsedResponse', parsedResponse);
-    });
+  if(options.name !== '' && options.contact !== ''){
+    fetch(url, fetchOptions)
+      .then(function(response){
+        return response.json();
+      }).then(function(parsedResponse){
+        console.log('parsedResponse', parsedResponse);
+      });
+  }
+  else {
+    alert('To order a trip, please provide your name and contact details');
+  }
 };
 
-const OrderForm = ({tripCost, options, setOrderOption}) => (
+const OrderForm = ({tripCost, options, setOrderOption, tripId, tripName, countryCode}) => (
   <Row>
     {pricing.map(option => (
       <Col md={4} key={option.id}>
@@ -46,11 +54,14 @@ const OrderForm = ({tripCost, options, setOrderOption}) => (
     <Col xs={12}>
       <OrderSummary tripCost={tripCost} options={options}/>
     </Col>
-    <Button onClick={() => sendOrder(options, tripCost)}>Order now!</Button>
+    <Button onClick={() => sendOrder(options, tripCost, tripId, tripName, countryCode)}>Order now!</Button>
   </Row>
 );
 
 OrderForm.propTypes = {
+  tripId: PropTypes.string,
+  tripName: PropTypes.string,
+  countryCode: PropTypes.string,
   tripCost: PropTypes.string,
   options: PropTypes.object,
   setOrderOption: PropTypes.func,
